@@ -65,6 +65,7 @@ class FormBuilder
         $text = new Text($name);
 
         if (!is_null($value = $this->getValueFor($name))) {
+            if(is_array($value)) $value = implode(",",$value);
             $text->value($value);
         }
 
